@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { sports as initialSports, schools as initialSchools, teams as initialTeams, players as initialPlayers, items as initialItems } from '../data/mockData';
+import { sports as initialSports, schools as initialSchools, teams as initialTeams, players as initialPlayers, items as initialItems, productCategories as initialCategories } from '../data/mockData';
 
 const DataContext = createContext();
 
@@ -11,6 +11,7 @@ export const DataProvider = ({ children }) => {
     const [teams, setTeams] = useState(initialTeams);
     const [players, setPlayers] = useState(initialPlayers);
     const [items, setItems] = useState(initialItems);
+    const [categories, setCategories] = useState(initialCategories);
 
     // Initialize from local storage if available, else usage mock data
     // For simplicity in this demo, we'll just stick to state that resets on reload 
@@ -35,6 +36,7 @@ export const DataProvider = ({ children }) => {
         teams,
         players,
         items,
+        categories,
         addPlayer,
         addItem,
         deleteItem

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
   /* Colors */
@@ -8,18 +8,52 @@
   --color-highlight: #1DB954;
   --color-text: #C0C0C0;
   --color-text-light: #FFFFFF;
+  --color-text-muted: #8A8A8A;
   --color-surface: #18181C;
   --color-surface-hover: #222226;
+  --color-surface-light: #2A2A2E;
 
   /* Typography */
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-elegant: 'Playfair Display', serif;
 
   /* Spacing */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
+  --radius-xl: 24px;
   --container-width: 1280px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-primary: 0 8px 24px rgba(255, 76, 41, 0.3);
+  --shadow-glow: 0 0 20px rgba(255, 76, 41, 0.2);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF4C29 0%, #FF6B4A 100%);
+  --gradient-secondary: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --gradient-dark: linear-gradient(135deg, #0E0E10 0%, #18181C 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(14, 14, 16, 0) 0%, rgba(14, 14, 16, 0.8) 100%);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(24, 24, 28, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
 }
 
 * {
@@ -37,11 +71,17 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--color-text-light);
   line-height: 1.1;
-  text-transform: uppercase; /* Premium feel */
+  text-transform: uppercase;
+  /* Premium feel */
   letter-spacing: -0.02em;
 }
 
@@ -73,4 +113,66 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* Utility Classes */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hover-lift {
+  transition: transform var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
 }

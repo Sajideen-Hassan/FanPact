@@ -1,13 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Menu, X, LogOut } from 'lucide-react';
+import { ShoppingCart, User, Menu, X, LogOut, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
+import { useWishlist } from '../../context/WishlistContext';
 import './Navbar.css';
 
 export default function Navbar() {
     const { user, logout } = useAuth();
     const { cartCount } = useCart();
+    const { wishlist } = useWishlist();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -20,18 +22,23 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    PLAYER<span className="text-primary">GEAR</span>
+                    FAN<span className="text-primary">PACT</span>
                 </Link>
 
                 {/* Desktop Menu */}
                 <div className="navbar-links desktop-only">
-                    <Link to="/shop" className="nav-link">Shop</Link>
-                    <Link to="/shop/sport/football" className="nav-link">Football</Link>
-                    <Link to="/shop/sport/basketball" className="nav-link">Basketball</Link>
+                    <Link to="/shop" className="nav-link">Home</Link>
+                    <Link to="/market" className="nav-link">Marketplace</Link>
+                    <Link to="/blog" className="nav-link">Blog</Link>
                     {user?.role === 'admin' && <Link to="/admin" className="nav-link">Admin</Link>}
                 </div>
 
                 <div className="navbar-actions">
+                    <Link to="/wishlist" className="action-btn relative">
+                        <Heart size={24} />
+                        {wishlist.length > 0 && <span className="cart-badge">{wishlist.length}</span>}
+                    </Link>
+
                     <Link to="/cart" className="action-btn relative">
                         <ShoppingCart size={24} />
                         {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
@@ -62,9 +69,10 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="mobile-menu">
-                    <Link to="/shop" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Shop</Link>
-                    <Link to="/shop/sport/football" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Football</Link>
-                    <Link to="/shop/sport/basketball" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Basketball</Link>
+                    <Link to="/shop" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                    <Link to="/market" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Marketplace</Link>
+                    <Link to="/blog" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                    <Link to="/wishlist" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Wishlist</Link>
                     {user?.role === 'admin' && (
                         <Link to="/admin" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Admin</Link>
                     )}
