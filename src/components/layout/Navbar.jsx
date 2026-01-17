@@ -22,7 +22,7 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    FAN<span className="text-primary">PACT</span>
+                    E<span className="text-primary">SHOP</span>
                 </Link>
 
                 {/* Desktop Menu */}

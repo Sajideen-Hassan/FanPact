@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <h3>FAN<span className="text-primary">PACT</span></h3>
+                        <h3>E<span className="text-primary">SHOP</span></h3>
                         <p>Empowering student-athletes and engaging fans in the Name, Image, and Likeness (NIL) era.</p>
                         <div className="social-links">
                             <a href="#" className="social-link" aria-label="Facebook">
@@ -51,7 +51,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-bottom">
                     <p className="footer-copyright">
-                        &copy; {new Date().getFullYear()} FanPact. All rights reserved.
+                        &copy; {new Date().getFullYear()} Eshop. All rights reserved.
                     </p>
                     <div className="payment-methods">
                         <span>We Accept:</span>

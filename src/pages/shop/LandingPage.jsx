@@ -232,7 +232,7 @@ export default function LandingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title">The FanPact Advantage</h2>
+            <h2 className="section-title">The Eshop Advantage</h2>
             <p className="section-subtitle">Empowering athletes, rewarding fans</p>
           </motion.div>
 
@@ -268,7 +268,7 @@ export default function LandingPage() {
             <div className="newsletter-icon">
               <Mail size={48} />
             </div>
-            <h2>Join the FanPact Community</h2>
+            <h2>Join the Eshop Community</h2>
             <p>Get notified about new drops, athlete appearances, and NIL news.</p>
             <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
               <input

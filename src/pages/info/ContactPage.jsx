@@ -29,8 +29,8 @@ const ContactPage = () => {
                 </div>
 
                 <div style={{ marginTop: '40px' }}>
-                    <p><strong>Email Us:</strong> team@fanpact.com</p>
-                    <p><strong>Affiliate Inquiries:</strong> affiliates@fanpact.net</p>
+                    <p><strong>Email Us:</strong> team@eshop.com</p>
+                    <p><strong>Affiliate Inquiries:</strong> affiliates@eshop.net</p>
                 </div>
             </div>
         </div>

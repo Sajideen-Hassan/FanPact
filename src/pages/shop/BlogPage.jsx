@@ -32,7 +32,7 @@ const BlogPage = () => {
     return (
         <div className="blog-page">
             <div className="blog-header">
-                <h1>FanPact Blog</h1>
+                <h1>Eshop Blog</h1>
                 <p>Insights, Stories, and Tips from the World of NIL & Athlete Branding</p>
             </div>
 

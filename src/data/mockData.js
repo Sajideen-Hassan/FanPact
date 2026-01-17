@@ -101,7 +101,7 @@ export const items = [
     {
         id: 'tech-bundle',
         categoryId: 'electronics',
-        name: 'FanPact Tech Bundle',
+        name: 'Eshop Tech Bundle',
         price: 199,
         image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000',
         description: 'Includes premium headphones and mobile accessories.'
